@@ -25,12 +25,21 @@
                 <input type="text" id="username" name="username" required><br><br>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required><br><br>
-                <button type="submit">Submit</button>
+                <div id="button-container">
+                    <button type="submit">Submit</button>
+                    <button type="button" onclick="goBack()">Back</button>
+                </div>
             </form>
         </div>
     </div>
 
 <script>
+    
+        function goBack() {
+            window.close(); // Close the current tab
+            window.opener.location.reload(); // Reload the parent window (assuming it's the index page)
+        }
+    
         window.onload = function() {
             
             // Get the URL parameters
